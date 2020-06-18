@@ -1,0 +1,271 @@
+From c5fc8adde3c175e8ba8a2223e68f83baa0229278 Mon Sep 17 00:00:00 2001
+From: Prathmesh Bhondave <prathmesh.bhondave2@gmail.com>
+Date: Thu, 18 Jun 2020 09:39:34 +0530
+Subject: [PATCH] INIT
+
+---
+ 0001-inti-commit.patch | 214 +++++++++++++++++++++++++++++++++++++++++
+ src/Graph.tsx          |  19 ++--
+ 2 files changed, 225 insertions(+), 8 deletions(-)
+ create mode 100644 0001-inti-commit.patch
+
+diff --git a/0001-inti-commit.patch b/0001-inti-commit.patch
+new file mode 100644
+index 0000000..2d78b18
+--- /dev/null
++++ b/0001-inti-commit.patch
+@@ -0,0 +1,214 @@
++From 760ea60c337484e21f6ee2229d4b8d0569496ef2 Mon Sep 17 00:00:00 2001
++From: Prathmesh Bhondave <prathmesh.bhondave2@gmail.com>
++Date: Wed, 17 Jun 2020 11:40:36 +0530
++Subject: [PATCH] inti commit
++
++---
++ .idea/.gitignore                              |  2 ++
++ .idea/JPMC-tech-task-2-PY3.iml                |  8 ++++++
++ .../inspectionProfiles/profiles_settings.xml  |  6 ++++
++ .idea/misc.xml                                |  4 +++
++ .idea/modules.xml                             |  8 ++++++
++ .idea/vcs.xml                                 |  6 ++++
++ datafeed/server3.py                           |  4 +--
++ src/App.tsx                                   | 28 +++++++++++++++----
++ src/Graph.tsx                                 | 13 +++++++--
++ 9 files changed, 69 insertions(+), 10 deletions(-)
++ create mode 100644 .idea/.gitignore
++ create mode 100644 .idea/JPMC-tech-task-2-PY3.iml
++ create mode 100644 .idea/inspectionProfiles/profiles_settings.xml
++ create mode 100644 .idea/misc.xml
++ create mode 100644 .idea/modules.xml
++ create mode 100644 .idea/vcs.xml
++
++diff --git a/.idea/.gitignore b/.idea/.gitignore
++new file mode 100644
++index 0000000..e7e9d11
++--- /dev/null
+++++ b/.idea/.gitignore
++@@ -0,0 +1,2 @@
+++# Default ignored files
+++/workspace.xml
++diff --git a/.idea/JPMC-tech-task-2-PY3.iml b/.idea/JPMC-tech-task-2-PY3.iml
++new file mode 100644
++index 0000000..d0876a7
++--- /dev/null
+++++ b/.idea/JPMC-tech-task-2-PY3.iml
++@@ -0,0 +1,8 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<module type="PYTHON_MODULE" version="4">
+++  <component name="NewModuleRootManager">
+++    <content url="file://$MODULE_DIR$" />
+++    <orderEntry type="inheritedJdk" />
+++    <orderEntry type="sourceFolder" forTests="false" />
+++  </component>
+++</module>
++\ No newline at end of file
++diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
++new file mode 100644
++index 0000000..105ce2d
++--- /dev/null
+++++ b/.idea/inspectionProfiles/profiles_settings.xml
++@@ -0,0 +1,6 @@
+++<component name="InspectionProjectProfileManager">
+++  <settings>
+++    <option name="USE_PROJECT_PROFILE" value="false" />
+++    <version value="1.0" />
+++  </settings>
+++</component>
++\ No newline at end of file
++diff --git a/.idea/misc.xml b/.idea/misc.xml
++new file mode 100644
++index 0000000..65531ca
++--- /dev/null
+++++ b/.idea/misc.xml
++@@ -0,0 +1,4 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project version="4">
+++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6" project-jdk-type="Python SDK" />
+++</project>
++\ No newline at end of file
++diff --git a/.idea/modules.xml b/.idea/modules.xml
++new file mode 100644
++index 0000000..f04cb23
++--- /dev/null
+++++ b/.idea/modules.xml
++@@ -0,0 +1,8 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project version="4">
+++  <component name="ProjectModuleManager">
+++    <modules>
+++      <module fileurl="file://$PROJECT_DIR$/.idea/JPMC-tech-task-2-PY3.iml" filepath="$PROJECT_DIR$/.idea/JPMC-tech-task-2-PY3.iml" />
+++    </modules>
+++  </component>
+++</project>
++\ No newline at end of file
++diff --git a/.idea/vcs.xml b/.idea/vcs.xml
++new file mode 100644
++index 0000000..94a25f7
++--- /dev/null
+++++ b/.idea/vcs.xml
++@@ -0,0 +1,6 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project version="4">
+++  <component name="VcsDirectoryMappings">
+++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+++  </component>
+++</project>
++\ No newline at end of file
++diff --git a/datafeed/server3.py b/datafeed/server3.py
++index 2de4e28..1d59866 100644
++--- a/datafeed/server3.py
+++++ b/datafeed/server3.py
++@@ -202,7 +202,7 @@ def get(req_handler, routes):
++                 req_handler.wfile.write(bytes(data,  encoding = 'utf-8'))
++                 return
++ 
++-def run(routes, host = '0.0.0.0', port = 8080):
+++def run(routes, host = '0.0.0.0', port = 8085):
++     """ Runs a class as a server whose methods have been decorated with
++         @route.
++     """
++@@ -215,7 +215,7 @@ def run(routes, host = '0.0.0.0', port = 8080):
++     thread = threading.Thread(target = server.serve_forever)
++     thread.daemon = True
++     thread.start()
++-    print ('HTTP server started on port 8080')
+++    print ('HTTP server started on port 8085')
++     while True:
++         from time import sleep
++         sleep(1)
++diff --git a/src/App.tsx b/src/App.tsx
++index 0728518..66ce3b5 100755
++--- a/src/App.tsx
+++++ b/src/App.tsx
++@@ -8,6 +8,7 @@ import './App.css';
++  */
++ interface IState {
++   data: ServerRespond[],
+++  showGraph: boolean,
++ }
++ 
++ /**
++@@ -22,25 +23,42 @@ class App extends Component<{}, IState> {
++       // data saves the server responds.
++       // We use this state to parse data down to the child element (Graph) as element property
++       data: [],
+++      showGraph: false,
++     };
++   }
++ 
++   /**
++    * Render Graph react component with state.data parse as property data
++    */
++-  renderGraph() {
++-    return (<Graph data={this.state.data}/>)
+++  renderGraph()
+++  {
+++    if(this.state.showGraph)
+++    {
+++     return (<Graph data={this.state.data}/>)
+++    }
++   }
++ 
++   /**
++    * Get new data from server and update the state with the new data
++    */
++   getDataFromServer() {
++-    DataStreamer.getData((serverResponds: ServerRespond[]) => {
+++    let x = 0;
+++    const interval = setInterval(() =>{
+++        DataStreamer.getData((serverResponds: ServerRespond[]) => {
+++            this.setState{
+++                data: serverResponds,
+++                showGraph: true,
+++            });
+++        });
+++        x++;
+++        if(x > 1000){
+++            clearInterval(interval);
+++        }
+++    }, 100);
++       // Update the state by creating a new array of data that consists of
++       // Previous data in the state and the new data from server
++-      this.setState({ data: [...this.state.data, ...serverResponds] });
++-    });
+++    //  this.setState({ data: [...this.state.data, ...serverResponds] });
+++    //});
++   }
++ 
++   /**
++diff --git a/src/Graph.tsx b/src/Graph.tsx
++index ec1430e..67ed1f2 100644
++--- a/src/Graph.tsx
+++++ b/src/Graph.tsx
++@@ -14,7 +14,7 @@ interface IProps {
++  * Perspective library adds load to HTMLElement prototype.
++  * This interface acts as a wrapper for Typescript compiler.
++  */
++-interface PerspectiveViewerElement {
+++interface PerspectiveViewerElement extends HTMLElement{
++   load: (table: Table) => void,
++ }
++ 
++@@ -32,8 +32,15 @@ class Graph extends Component<IProps, {}> {
++ 
++   componentDidMount() {
++     // Get element to attach the table from the DOM.
++-    const elem: PerspectiveViewerElement = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
++-
+++    const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
+++    elem.setAttribute('View','y_line');
+++    elem.setAttribute('column_pivots', '["stock"]');
+++    elem.setAttribute('row_pivots', '["timestamp"]');
+++    elem.setAttribute('columns', '[top_ask_price]');
+++    elem.setAttribute('aggregate', {"stock": "distinct count",
+++                                        "top_ask_price": "avg",
+++                                        "top_bid_price": "avg",
+++                                        "timestamp": "distinct count"});
++     const schema = {
++       stock: 'string',
++       top_ask_price: 'float',
++-- 
++2.27.0.windows.1
++
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index 67ed1f2..f2c1cc7 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -33,14 +33,7 @@ class Graph extends Component<IProps, {}> {
+   componentDidMount() {
+     // Get element to attach the table from the DOM.
+     const elem = document.getElementsByTagName('perspective-viewer')[0] as unknown as PerspectiveViewerElement;
+-    elem.setAttribute('View','y_line');
+-    elem.setAttribute('column_pivots', '["stock"]');
+-    elem.setAttribute('row_pivots', '["timestamp"]');
+-    elem.setAttribute('columns', '[top_ask_price]');
+-    elem.setAttribute('aggregate', {"stock": "distinct count",
+-                                        "top_ask_price": "avg",
+-                                        "top_bid_price": "avg",
+-                                        "timestamp": "distinct count"});
++
+     const schema = {
+       stock: 'string',
+       top_ask_price: 'float',
+@@ -56,6 +49,16 @@ class Graph extends Component<IProps, {}> {
+ 
+       // Add more Perspective configurations here.
+       elem.load(this.table);
++      elem.setAttribute('view', 'y_line');
++      elem.setAttribute('column-pivots', '["stock"]');
++      elem.setAttribute('row-pivots', '["timestamp"]');
++      elem.setAttribute('columns', '["top_ask_price"]');
++      elem.setAttribute('aggregates', JSON.stringify({
++        stock: 'distinctcount',
++        top_ask_price: 'avg',
++        top_bid_price: 'avg',
++        timestamp: 'distinct count',
++      }));
+     }
+   }
+ 
+-- 
+2.27.0.windows.1
+
